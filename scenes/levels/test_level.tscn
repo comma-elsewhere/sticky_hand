@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbnixns3b6mq4"]
+
+[ext_resource type="PackedScene" uid="uid://ckjydks0hwd44" path="res://scenes/players/hare.tscn" id="1_yautc"]
+[ext_resource type="PackedScene" uid="uid://fjf4fvxbxx2" path="res://scenes/players/tortoise.tscn" id="2_fr1um"]
+[ext_resource type="PackedScene" uid="uid://qmdeuiaxnbld" path="res://scenes/prefabs/temp_platform.tscn" id="3_fr1um"]
+[ext_resource type="Script" uid="uid://i1p01uacjo0i" path="res://scripts/camera.gd" id="4_v45ci"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Hare" parent="." instance=ExtResource("1_yautc")]
+position = Vector2(-497, -4)
+
+[node name="Tortoise" parent="." instance=ExtResource("2_fr1um")]
+position = Vector2(-342, -5)
+
+[node name="Platform" parent="." instance=ExtResource("3_fr1um")]
+position = Vector2(6822.0005, 263)
+scale = Vector2(30, 1)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-566, -1031)
+anchor_mode = 0
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("4_v45ci")
