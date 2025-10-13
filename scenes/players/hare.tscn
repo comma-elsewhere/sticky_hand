@@ -1,36 +1,35 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckjydks0hwd44"]
+[gd_scene load_steps=7 format=3 uid="uid://ckjydks0hwd44"]
 
 [ext_resource type="Script" uid="uid://7eoo2xta6muf" path="res://scripts/hare.gd" id="1_qx8q3"]
-[ext_resource type="Script" uid="uid://djuhdded862u5" path="res://scripts/res scripts/player_buffs.gd" id="2_42wkl"]
+[ext_resource type="Resource" uid="uid://e2calkfm30uw" path="res://resources/hare.tres" id="2_42wkl"]
 [ext_resource type="Texture2D" uid="uid://dkbj3xfjglp5f" path="res://icon.svg" id="2_pw6if"]
-
-[sub_resource type="Resource" id="Resource_hdpay"]
-script = ExtResource("2_42wkl")
-metadata/_custom_type_script = "uid://djuhdded862u5"
 
 [sub_resource type="InputEventAction" id="InputEventAction_i3ol5"]
 action = &"hare_up"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yautc"]
-size = Vector2(128, 128)
+size = Vector2(126, 127)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pw6if"]
 radius = 90.0
 
-[node name="Hare" type="CharacterBody2D" node_paths=PackedStringArray("jump_buffer", "coyote_time")]
+[node name="Hare" type="CharacterBody2D" node_paths=PackedStringArray("jump_buffer", "coyote_time") groups=["Hare"]]
 script = ExtResource("1_qx8q3")
-buff = SubResource("Resource_hdpay")
+buff = ExtResource("2_42wkl")
 player_type = "Hare"
-base_jump = 600.0
+base_speed = 350.0
+base_jump = 650.0
 jump_button = SubResource("InputEventAction_i3ol5")
 jump_buffer = NodePath("JumpBuffer")
 coyote_time = NodePath("CoyoteTimer")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -64)
 texture = ExtResource("2_pw6if")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -63.5)
 shape = SubResource("RectangleShape2D_yautc")
 
 [node name="JumpBuffer" type="Timer" parent="."]
@@ -42,6 +41,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -64)
 collision_layer = 2
 collision_mask = 2
 

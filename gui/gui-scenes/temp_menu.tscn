@@ -1,0 +1,259 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5adl1p2dfrf3"]
+
+[ext_resource type="Script" uid="uid://b00xddcr1u032" path="res://gui/gui-scripts/buff_button.gd" id="1_4jl60"]
+[ext_resource type="Script" uid="uid://drquewmfctyhi" path="res://gui/gui-scripts/temp_menu.gd" id="1_yo1lm"]
+
+[node name="Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yo1lm")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(750, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="ShopBox" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HareBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/ShopBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 15
+
+[node name="HareLabel" type="Label" parent="PanelContainer/MarginContainer/ShopBox/HareBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Hare"
+
+[node name="SpeedIncrease" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/HareBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/HareBox/SpeedIncrease"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Speed Increase"
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/HareBox/SpeedIncrease"]
+layout_mode = 2
+script = ExtResource("1_4jl60")
+player_type = "Hare"
+function = "add_speed"
+
+[node name="JumpIncrease" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/HareBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/HareBox/JumpIncrease"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Jump Increase"
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/HareBox/JumpIncrease"]
+layout_mode = 2
+script = ExtResource("1_4jl60")
+player_type = "Hare"
+function = "add_jump"
+
+[node name="DoubleJump" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/HareBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/HareBox/DoubleJump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Double Jump"
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/HareBox/DoubleJump"]
+layout_mode = 2
+script = ExtResource("1_4jl60")
+player_type = "Hare"
+function = "set_double_jump"
+
+[node name="WallJump" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/HareBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/HareBox/WallJump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Wall Jump"
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/HareBox/WallJump"]
+layout_mode = 2
+script = ExtResource("1_4jl60")
+player_type = "Hare"
+function = "set_wall_jump"
+
+[node name="MultiCandy" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/HareBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/HareBox/MultiCandy"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Multi-Candy"
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/HareBox/MultiCandy"]
+layout_mode = 2
+script = ExtResource("1_4jl60")
+player_type = "Hare"
+function = "set_multi_candy"
+
+[node name="CandyMagnet" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/HareBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/HareBox/CandyMagnet"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Candy Magnet"
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/HareBox/CandyMagnet"]
+layout_mode = 2
+script = ExtResource("1_4jl60")
+player_type = "Hare"
+function = "set_candy_magnet"
+
+[node name="TortoiseBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/ShopBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 15
+
+[node name="TortoiseLabel" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Tortoise"
+
+[node name="SpeedIncrease" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/SpeedIncrease"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Speed Increase"
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/SpeedIncrease"]
+layout_mode = 2
+script = ExtResource("1_4jl60")
+player_type = "Tortoise"
+function = "add_speed"
+
+[node name="JumpIncrease" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/JumpIncrease"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Jump Increase"
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/JumpIncrease"]
+layout_mode = 2
+script = ExtResource("1_4jl60")
+player_type = "Tortoise"
+function = "add_jump"
+
+[node name="DoubleJump" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/DoubleJump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Double Jump"
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/DoubleJump"]
+layout_mode = 2
+script = ExtResource("1_4jl60")
+player_type = "Tortoise"
+function = "set_double_jump"
+
+[node name="WallJump" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/WallJump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Wall Jump"
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/WallJump"]
+layout_mode = 2
+script = ExtResource("1_4jl60")
+player_type = "Tortoise"
+function = "set_wall_jump"
+
+[node name="MultiCandy" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/MultiCandy"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Multi-Candy"
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/MultiCandy"]
+layout_mode = 2
+script = ExtResource("1_4jl60")
+player_type = "Tortoise"
+function = "set_multi_candy"
+
+[node name="CandyMagnet" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/CandyMagnet"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Candy Magnet"
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/CandyMagnet"]
+layout_mode = 2
+script = ExtResource("1_4jl60")
+player_type = "Tortoise"
+function = "set_candy_magnet"
+
+[node name="CandyLabel" type="Label" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 36
+text = "XX Total Candy"
+
+[node name="PlayButton" type="Button" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 36
+text = "Play"
+
+[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/HareBox/SpeedIncrease/CheckButton" to="PanelContainer/MarginContainer/ShopBox/HareBox/SpeedIncrease/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/HareBox/JumpIncrease/CheckButton" to="PanelContainer/MarginContainer/ShopBox/HareBox/JumpIncrease/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/HareBox/DoubleJump/CheckButton" to="PanelContainer/MarginContainer/ShopBox/HareBox/DoubleJump/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/HareBox/WallJump/CheckButton" to="PanelContainer/MarginContainer/ShopBox/HareBox/WallJump/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/HareBox/MultiCandy/CheckButton" to="PanelContainer/MarginContainer/ShopBox/HareBox/MultiCandy/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/HareBox/CandyMagnet/CheckButton" to="PanelContainer/MarginContainer/ShopBox/HareBox/CandyMagnet/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/TortoiseBox/SpeedIncrease/CheckButton" to="PanelContainer/MarginContainer/ShopBox/TortoiseBox/SpeedIncrease/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/TortoiseBox/JumpIncrease/CheckButton" to="PanelContainer/MarginContainer/ShopBox/TortoiseBox/JumpIncrease/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/TortoiseBox/DoubleJump/CheckButton" to="PanelContainer/MarginContainer/ShopBox/TortoiseBox/DoubleJump/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/TortoiseBox/WallJump/CheckButton" to="PanelContainer/MarginContainer/ShopBox/TortoiseBox/WallJump/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/TortoiseBox/MultiCandy/CheckButton" to="PanelContainer/MarginContainer/ShopBox/TortoiseBox/MultiCandy/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/TortoiseBox/CandyMagnet/CheckButton" to="PanelContainer/MarginContainer/ShopBox/TortoiseBox/CandyMagnet/CheckButton" method="_on_toggled"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/PlayButton" to="." method="_on_play_button_pressed"]

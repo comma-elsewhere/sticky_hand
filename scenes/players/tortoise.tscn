@@ -1,25 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://fjf4fvxbxx2"]
+[gd_scene load_steps=7 format=3 uid="uid://fjf4fvxbxx2"]
 
 [ext_resource type="Script" uid="uid://bva05vd0kg63m" path="res://scripts/tortoise.gd" id="1_v1nrr"]
 [ext_resource type="Texture2D" uid="uid://dkbj3xfjglp5f" path="res://icon.svg" id="2_6x0bh"]
-[ext_resource type="Script" uid="uid://djuhdded862u5" path="res://scripts/res scripts/player_buffs.gd" id="2_8mrdy"]
-
-[sub_resource type="Resource" id="Resource_3avp6"]
-script = ExtResource("2_8mrdy")
-metadata/_custom_type_script = "uid://djuhdded862u5"
+[ext_resource type="Resource" uid="uid://cbellgctg6yn1" path="res://resources/tortoise.tres" id="2_8mrdy"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_ungam"]
 action = &"tort_jump"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yautc"]
-size = Vector2(128, 128)
+size = Vector2(128, 63)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6x0bh"]
-radius = 90.0
+radius = 72.00694
 
-[node name="Tortoise" type="CharacterBody2D" node_paths=PackedStringArray("jump_buffer", "coyote_time")]
+[node name="Tortoise" type="CharacterBody2D" node_paths=PackedStringArray("jump_buffer", "coyote_time") groups=["Tortoise"]]
 script = ExtResource("1_v1nrr")
-buff = SubResource("Resource_3avp6")
+buff = ExtResource("2_8mrdy")
 player_type = "Tortoise"
 base_speed = 150.0
 base_jump = 350.0
@@ -29,9 +25,12 @@ coyote_time = NodePath("CoyoteTimer")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -32)
+scale = Vector2(1, 0.5)
 texture = ExtResource("2_6x0bh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -31.5)
 shape = SubResource("RectangleShape2D_yautc")
 
 [node name="JumpBuffer" type="Timer" parent="."]
@@ -43,6 +42,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, -31)
 collision_layer = 2
 collision_mask = 2
 

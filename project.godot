@@ -22,6 +22,11 @@ GFunc="*res://scripts/global/global_func.gd"
 GSig="*res://scripts/global/global_signals.gd"
 GVar="*res://scripts/global/global_vars.gd"
 
+[global_group]
+
+Tortoise=""
+Hare=""
+
 [input]
 
 hare_up={

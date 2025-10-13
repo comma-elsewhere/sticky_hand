@@ -17,6 +17,9 @@ var jump_velocity: float
 var move_speed: float
 var jump_count: int = 0
 
+func _ready() -> void:
+	add_to_group("Player")
+
 func _input(event: InputEvent):
 	#Handle jump and buffer jump
 	if event.is_action_pressed(jump_button.action):
@@ -77,5 +80,5 @@ func _on_area_2d_body_entered(body: Node2D):
 		body.candy_pickup(buff.multi_candy)
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	await get_tree().create_timer(0.8).timeout
-	GFunc.player_death()
+	await get_tree().create_timer(1.0).timeout
+	GFunc.player_death(self)
