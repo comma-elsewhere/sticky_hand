@@ -3,32 +3,31 @@ class_name Player
 
 @export var buff: PlayerBuff
 
-@export_enum("Tortoise", "Hare") var player_type: String
+@export var base_speed: float = 350.0
+@export var base_jump: float = 710.0
 
-@export var base_speed: float = 300.0
-@export var base_jump: float = 400.0
-
-@export var jump_button: InputEventAction
 @export var jump_buffer: Timer
 @export var coyote_time: Timer
+
+const GRAVITY: float = 2000.0
 
 var can_jump: = true
 var jump_velocity: float
 var move_speed: float
 var jump_count: int = 0
 
-func _ready() -> void:
-	add_to_group("Player")
-
 func _input(event: InputEvent):
 	#Handle jump and buffer jump
-	if event.is_action_pressed(jump_button.action):
+	if event.is_action_pressed("up"):
 		jump_operator()
+		
+	if event.is_action_pressed("down") and is_on_floor():
+		platform_drop()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity
 	if !is_on_floor():
-		velocity += get_gravity() * delta
+		velocity.y += GRAVITY * delta
 		
 	#Reset can_jump bool
 	if !can_jump and is_on_floor():
@@ -45,6 +44,15 @@ func _physics_process(delta: float) -> void:
 		
 	#Set speeds
 	speed_setter()
+	
+	var direction := Input.get_axis("left", "right")
+	if direction:
+		velocity.x = direction * move_speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, move_speed)
+	
+	if buff.wall_jump and is_on_wall_only():
+		wall_jump()
 	
 	#emits candy magnet signal
 	if buff.candy_magnet:
@@ -72,6 +80,15 @@ func actual_jump():
 	elif !buff.double_jump:
 		can_jump = false
 	
+func wall_jump():
+	if Input.is_action_just_pressed("up"):
+		velocity.y = -jump_velocity
+	elif velocity.y > 0:
+		velocity.y /= 1.2
+
+func platform_drop():
+	global_position.y += 1
+
 func _on_coyote_timer_timeout():
 	can_jump = false
 
@@ -80,5 +97,4 @@ func _on_area_2d_body_entered(body: Node2D):
 		body.candy_pickup(buff.multi_candy)
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	await get_tree().create_timer(1.0).timeout
 	GFunc.player_death(self)

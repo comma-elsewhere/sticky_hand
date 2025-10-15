@@ -26,13 +26,13 @@ func add_extra_lives(add: int):
 	
 func add_speed(increase: bool):
 	if increase:
-		speed_increase = 1.5
+		speed_increase = 1.4
 	else:
 		speed_increase = 1.0
 	
 func add_jump(increase: bool):
 	if increase:
-		jump_increase = 1.5
+		jump_increase = 1.2
 	else:
 		jump_increase = 1.0
 	

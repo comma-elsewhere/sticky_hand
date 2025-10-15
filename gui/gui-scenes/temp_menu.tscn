@@ -46,6 +46,7 @@ size_flags_vertical = 0
 theme_override_constants/separation = 15
 
 [node name="HareLabel" type="Label" parent="PanelContainer/MarginContainer/ShopBox/HareBox"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Hare"
@@ -61,7 +62,6 @@ text = "Speed Increase"
 [node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/HareBox/SpeedIncrease"]
 layout_mode = 2
 script = ExtResource("1_4jl60")
-player_type = "Hare"
 function = "add_speed"
 
 [node name="JumpIncrease" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/HareBox"]
@@ -75,7 +75,6 @@ text = "Jump Increase"
 [node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/HareBox/JumpIncrease"]
 layout_mode = 2
 script = ExtResource("1_4jl60")
-player_type = "Hare"
 function = "add_jump"
 
 [node name="DoubleJump" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/HareBox"]
@@ -89,7 +88,6 @@ text = "Double Jump"
 [node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/HareBox/DoubleJump"]
 layout_mode = 2
 script = ExtResource("1_4jl60")
-player_type = "Hare"
 function = "set_double_jump"
 
 [node name="WallJump" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/HareBox"]
@@ -103,7 +101,6 @@ text = "Wall Jump"
 [node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/HareBox/WallJump"]
 layout_mode = 2
 script = ExtResource("1_4jl60")
-player_type = "Hare"
 function = "set_wall_jump"
 
 [node name="MultiCandy" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/HareBox"]
@@ -112,12 +109,11 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/HareBox/MultiCandy"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Multi-Candy"
+text = "Double Candy"
 
 [node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/HareBox/MultiCandy"]
 layout_mode = 2
 script = ExtResource("1_4jl60")
-player_type = "Hare"
 function = "set_multi_candy"
 
 [node name="CandyMagnet" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/HareBox"]
@@ -131,102 +127,6 @@ text = "Candy Magnet"
 [node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/HareBox/CandyMagnet"]
 layout_mode = 2
 script = ExtResource("1_4jl60")
-player_type = "Hare"
-function = "set_candy_magnet"
-
-[node name="TortoiseBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/ShopBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-theme_override_constants/separation = 15
-
-[node name="TortoiseLabel" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Tortoise"
-
-[node name="SpeedIncrease" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/SpeedIncrease"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Speed Increase"
-
-[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/SpeedIncrease"]
-layout_mode = 2
-script = ExtResource("1_4jl60")
-player_type = "Tortoise"
-function = "add_speed"
-
-[node name="JumpIncrease" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/JumpIncrease"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Jump Increase"
-
-[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/JumpIncrease"]
-layout_mode = 2
-script = ExtResource("1_4jl60")
-player_type = "Tortoise"
-function = "add_jump"
-
-[node name="DoubleJump" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/DoubleJump"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Double Jump"
-
-[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/DoubleJump"]
-layout_mode = 2
-script = ExtResource("1_4jl60")
-player_type = "Tortoise"
-function = "set_double_jump"
-
-[node name="WallJump" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/WallJump"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Wall Jump"
-
-[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/WallJump"]
-layout_mode = 2
-script = ExtResource("1_4jl60")
-player_type = "Tortoise"
-function = "set_wall_jump"
-
-[node name="MultiCandy" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/MultiCandy"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Multi-Candy"
-
-[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/MultiCandy"]
-layout_mode = 2
-script = ExtResource("1_4jl60")
-player_type = "Tortoise"
-function = "set_multi_candy"
-
-[node name="CandyMagnet" type="HBoxContainer" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/CandyMagnet"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Candy Magnet"
-
-[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/ShopBox/TortoiseBox/CandyMagnet"]
-layout_mode = 2
-script = ExtResource("1_4jl60")
-player_type = "Tortoise"
 function = "set_candy_magnet"
 
 [node name="CandyLabel" type="Label" parent="PanelContainer/MarginContainer"]
@@ -250,10 +150,4 @@ text = "Play"
 [connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/HareBox/WallJump/CheckButton" to="PanelContainer/MarginContainer/ShopBox/HareBox/WallJump/CheckButton" method="_on_toggled"]
 [connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/HareBox/MultiCandy/CheckButton" to="PanelContainer/MarginContainer/ShopBox/HareBox/MultiCandy/CheckButton" method="_on_toggled"]
 [connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/HareBox/CandyMagnet/CheckButton" to="PanelContainer/MarginContainer/ShopBox/HareBox/CandyMagnet/CheckButton" method="_on_toggled"]
-[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/TortoiseBox/SpeedIncrease/CheckButton" to="PanelContainer/MarginContainer/ShopBox/TortoiseBox/SpeedIncrease/CheckButton" method="_on_toggled"]
-[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/TortoiseBox/JumpIncrease/CheckButton" to="PanelContainer/MarginContainer/ShopBox/TortoiseBox/JumpIncrease/CheckButton" method="_on_toggled"]
-[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/TortoiseBox/DoubleJump/CheckButton" to="PanelContainer/MarginContainer/ShopBox/TortoiseBox/DoubleJump/CheckButton" method="_on_toggled"]
-[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/TortoiseBox/WallJump/CheckButton" to="PanelContainer/MarginContainer/ShopBox/TortoiseBox/WallJump/CheckButton" method="_on_toggled"]
-[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/TortoiseBox/MultiCandy/CheckButton" to="PanelContainer/MarginContainer/ShopBox/TortoiseBox/MultiCandy/CheckButton" method="_on_toggled"]
-[connection signal="toggled" from="PanelContainer/MarginContainer/ShopBox/TortoiseBox/CandyMagnet/CheckButton" to="PanelContainer/MarginContainer/ShopBox/TortoiseBox/CandyMagnet/CheckButton" method="_on_toggled"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/PlayButton" to="." method="_on_play_button_pressed"]

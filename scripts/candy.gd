@@ -9,7 +9,7 @@ func _ready() -> void:
 	
 func candy_pickup(multicandy: bool):
 	if multicandy:
-		candy_amount = randi_range(1,3)
+		candy_amount = 2
 	animation.play("pickup")
 
 func add_score():

@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="PlayerBuff" load_steps=2 format=3 uid="uid://cbellgctg6yn1"]
-
-[ext_resource type="Script" uid="uid://djuhdded862u5" path="res://scripts/res scripts/player_buffs.gd" id="1_36a03"]
-
-[resource]
-script = ExtResource("1_36a03")
-metadata/_custom_type_script = "uid://djuhdded862u5"
