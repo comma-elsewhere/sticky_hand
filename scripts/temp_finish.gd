@@ -1,7 +1,7 @@
 extends Area2D
 
-var player_count: int = 0
-
+#checking if body is player, adding up candy collected then reseting counter and buffs
+#reload with call deferred so it doesn't break anything in the physics processing
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		GVar.total_candy += GVar.candy_collected

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://dbnixns3b6mq4"]
 
-[ext_resource type="PackedScene" uid="uid://ckjydks0hwd44" path="res://scenes/players/player.tscn" id="1_yautc"]
+[ext_resource type="PackedScene" uid="uid://ckjydks0hwd44" path="res://scenes/players/temp_player.tscn" id="1_yautc"]
 [ext_resource type="Texture2D" uid="uid://mauosuf6p3rl" path="res://assets/sprites/placeholder.png" id="2_yautc"]
 [ext_resource type="PackedScene" uid="uid://g5rx3wrfb34s" path="res://scenes/prefabs/candy.tscn" id="5_48ne7"]
 [ext_resource type="PackedScene" uid="uid://b5adl1p2dfrf3" path="res://gui/gui-scenes/temp_menu.tscn" id="6_6xh4u"]

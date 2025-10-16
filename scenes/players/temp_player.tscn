@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ckjydks0hwd44"]
 
-[ext_resource type="Script" uid="uid://d0vo4slcy405b" path="res://scripts/classes/player.gd" id="1_ldeu4"]
+[ext_resource type="Script" uid="uid://d0vo4slcy405b" path="res://scripts/classes/temp_player.gd" id="1_ldeu4"]
 [ext_resource type="Resource" uid="uid://bo8bx3w6w6s7j" path="res://resources/player.tres" id="2_kc87p"]
 [ext_resource type="Texture2D" uid="uid://dkbj3xfjglp5f" path="res://icon.svg" id="2_pw6if"]
 
@@ -10,7 +10,7 @@ size = Vector2(126, 127)
 [sub_resource type="CircleShape2D" id="CircleShape2D_pw6if"]
 radius = 90.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("jump_buffer", "coyote_time") groups=["Player"]]
+[node name="TempPlayer" type="CharacterBody2D" node_paths=PackedStringArray("jump_buffer", "coyote_time") groups=["Player"]]
 script = ExtResource("1_ldeu4")
 buff = ExtResource("2_kc87p")
 base_jump = 900.0
